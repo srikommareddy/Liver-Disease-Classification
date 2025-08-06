@@ -30,9 +30,9 @@ feature_names = ['Age_of_the_patient',
   'Result']
 
 # App title
-st.title("Customer Segmentation - Random Forest Classifier")
+st.title("Liver Disease Classification - Random Forest Classifier")
 
-st.sidebar.header("Enter Customer Features")
+st.sidebar.header("Enter Patient's Data")
 
 # Input form
 user_input = []
@@ -40,7 +40,7 @@ for feature in feature_names:
     val = st.sidebar.number_input(f"{feature}", value=0.0, format="%.2f")
     user_input.append(val)
 
-if st.sidebar.button("Predict Cluster"):
+if st.sidebar.button("Predict Liver Health"):
     # Convert to dataframe and scale
     input_df = pd.DataFrame([user_input], columns=feature_names)
     input_scaled = scaler.transform(input_df)
@@ -48,8 +48,8 @@ if st.sidebar.button("Predict Cluster"):
     # Predict
     predicted_cluster = model.predict(input_scaled)[0]
 
-    st.subheader("Predicted Cluster")
-    st.success(f"Customer belongs to Cluster {predicted_cluster}")
+    st.subheader("Liver Health Status")
+    st.success(f"Patent has {predicted_cluster}")
 
     
 
