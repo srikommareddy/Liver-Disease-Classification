@@ -46,9 +46,12 @@ if st.sidebar.button("Predict Liver Health"):
 
     # Predict
     predicted_cluster = model.predict(input_scaled)[0]
-
+    if predicted_cluster == 1:
+      result = "No Liver Disease"
+    else:
+       result = "Liver Disease"
     st.subheader("Liver Health Status")
-    st.success(f"Patent has {predicted_cluster}")
+    st.success(f"Patent has {result}")
 
     
 
