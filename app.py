@@ -26,8 +26,7 @@ feature_names = ['Age_of_the_patient',
   'Sgot_Aspartate_Aminotransferase',
   'Total_Protiens',
   'ALB_Albumin',
-  'A/G_Ratio_Albumin_and_Globulin_Ratio',
-  'Result']
+  'A/G_Ratio_Albumin_and_Globulin_Ratio']
 
 # App title
 st.title("Liver Disease Classification - Random Forest Classifier")
