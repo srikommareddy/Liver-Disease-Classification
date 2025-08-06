@@ -42,10 +42,10 @@ for feature in feature_names:
 if st.sidebar.button("Predict Liver Health"):
     # Convert to dataframe and scale
     input_df = pd.DataFrame([user_input], columns=feature_names)
-    input_scaled = scaler.transform(input_df)
+    #input_scaled = scaler.transform(input_df)
 
     # Predict
-    predicted_cluster = model.predict(input_scaled)[0]
+    predicted_cluster = model.predict(input_df.values)[0]
     if predicted_cluster == 1:
       result = "No Liver Disease"
     else:
