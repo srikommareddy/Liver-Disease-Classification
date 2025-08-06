@@ -13,7 +13,6 @@ import seaborn as sns
 
 # Load model and scaler
 model = joblib.load('rf_model.pkl')
-scaler = joblib.load('scaler.pkl')
 
 
 # Define input features - update this list to match your model
@@ -42,7 +41,7 @@ for feature in feature_names:
 if st.sidebar.button("Predict Liver Health"):
     # Convert to dataframe and scale
     input_df = pd.DataFrame([user_input], columns=feature_names)
-    #input_scaled = scaler.transform(input_df)
+    
 
     # Predict
     predicted_cluster = model.predict(input_df.values)[0]
